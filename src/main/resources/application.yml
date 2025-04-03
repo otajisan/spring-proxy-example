@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: spring-proxy-example
+
+  #cloud:
+  #  gateway:
+  #    routes:
+  #      - id: dynamic-proxy-route
+  #        uri: http://127.0.0.1:9999
+  #        predicates:
+  #          - Path=/proxy/**
+  #        filters:
+  #          - RewritePath=/proxy/(?<segment>.*), /$\{segment}
+
+proxy:
+  auth:
+    username: ${PROXY_USERNAME}
+    password: ${PROXY_PASSWORD}
+
+server:
+  port: 19090
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway: TRACE
